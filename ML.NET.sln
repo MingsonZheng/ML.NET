@@ -5,11 +5,15 @@ VisualStudioVersion = 17.0.32014.148
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "myMLApp", "myMLApp\myMLApp.csproj", "{30095BED-7952-484F-8839-B59C99016925}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PredictiveMaintenance", "PredictiveMaintenance\PredictiveMaintenance.csproj", "{A8EE29D2-0894-47FF-B4C0-B0D5BBEC0CBB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PredictiveMaintenance", "PredictiveMaintenance\PredictiveMaintenance.csproj", "{A8EE29D2-0894-47FF-B4C0-B0D5BBEC0CBB}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PredictiveMaintenanceConsole", "PredictiveMaintenanceConsole\PredictiveMaintenanceConsole.csproj", "{0CBA9B3D-A159-4EA9-9293-1C2D2C40A5D9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SentimentRazor", "SentimentRazor\SentimentRazor.csproj", "{C6D1A132-03CA-4BE8-B5DA-5253D89DEC2E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SentimentRazor", "SentimentRazor\SentimentRazor.csproj", "{C6D1A132-03CA-4BE8-B5DA-5253D89DEC2E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxiFarePrediction", "TaxiFarePrediction\TaxiFarePrediction.csproj", "{927B2C44-159A-463A-A7A1-1C2817CC660C}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxiFare_API", "TaxiFare_API\TaxiFare_API.csproj", "{9BCF43E0-69CB-42B9-9E79-C938BB9DD088}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +37,14 @@ Global
 		{C6D1A132-03CA-4BE8-B5DA-5253D89DEC2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C6D1A132-03CA-4BE8-B5DA-5253D89DEC2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C6D1A132-03CA-4BE8-B5DA-5253D89DEC2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{927B2C44-159A-463A-A7A1-1C2817CC660C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{927B2C44-159A-463A-A7A1-1C2817CC660C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{927B2C44-159A-463A-A7A1-1C2817CC660C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{927B2C44-159A-463A-A7A1-1C2817CC660C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BCF43E0-69CB-42B9-9E79-C938BB9DD088}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BCF43E0-69CB-42B9-9E79-C938BB9DD088}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BCF43E0-69CB-42B9-9E79-C938BB9DD088}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BCF43E0-69CB-42B9-9E79-C938BB9DD088}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

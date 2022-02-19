@@ -27,3 +27,7 @@ app.UseAuthorization();
 app.MapRazorPages();
 
 app.Run();
+
+/*
+当应用程序启动时，在文本区域中输入“Model Builder is cool!” 。 显示的预测情绪应为“Not Toxic” 。
+ */

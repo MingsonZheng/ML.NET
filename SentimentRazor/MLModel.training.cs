@@ -33,7 +33,7 @@ namespace SentimentRazor
                                     .Append(mlContext.Transforms.Concatenate(@"Features", new []{@"LoggedIn",@"SentimentText"}))      
                                     .Append(mlContext.Transforms.Conversion.MapValueToKey(@"Sentiment", @"Sentiment"))      
                                     .Append(mlContext.Transforms.NormalizeMinMax(@"Features", @"Features"))      
-                                    .Append(mlContext.MulticlassClassification.Trainers.OneVersusAll(binaryEstimator:mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(l1Regularization:1F,l2Regularization:1F,labelColumnName:@"Sentiment",featureColumnName:@"Features"), labelColumnName: @"Sentiment"))      
+                                    .Append(mlContext.MulticlassClassification.Trainers.OneVersusAll(binaryEstimator:mlContext.BinaryClassification.Trainers.LbfgsLogisticRegression(l1Regularization:4.82585565958487F,l2Regularization:3.21825558622543F,labelColumnName:@"Sentiment",featureColumnName:@"Features"), labelColumnName: @"Sentiment"))      
                                     .Append(mlContext.Transforms.Conversion.MapKeyToValue(@"PredictedLabel", @"PredictedLabel"));
 
             return pipeline;
