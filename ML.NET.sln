@@ -15,6 +15,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxiFarePrediction", "TaxiF
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TaxiFare_API", "TaxiFare_API\TaxiFare_API.csproj", "{9BCF43E0-69CB-42B9-9E79-C938BB9DD088}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RestaurantViolations", "RestaurantViolations\RestaurantViolations.csproj", "{53050DB6-0B14-4584-81E2-6D59FD42F6CC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RestaurantViolationsPrediction_API", "RestaurantViolationsPrediction_API\RestaurantViolationsPrediction_API.csproj", "{23EF2B0F-281E-47BD-B938-8EB0329C3789}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +49,14 @@ Global
 		{9BCF43E0-69CB-42B9-9E79-C938BB9DD088}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9BCF43E0-69CB-42B9-9E79-C938BB9DD088}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9BCF43E0-69CB-42B9-9E79-C938BB9DD088}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53050DB6-0B14-4584-81E2-6D59FD42F6CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53050DB6-0B14-4584-81E2-6D59FD42F6CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53050DB6-0B14-4584-81E2-6D59FD42F6CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53050DB6-0B14-4584-81E2-6D59FD42F6CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{23EF2B0F-281E-47BD-B938-8EB0329C3789}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{23EF2B0F-281E-47BD-B938-8EB0329C3789}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{23EF2B0F-281E-47BD-B938-8EB0329C3789}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{23EF2B0F-281E-47BD-B938-8EB0329C3789}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

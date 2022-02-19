@@ -1,0 +1,74 @@
+﻿{
+  "TrainingTime": 60,
+  "Scenario": "Classification",
+  "DataSource": {
+    "Type": "SQL",
+    "Version": 1,
+    "ColumnProperties": [
+      {
+        "ColumnName": "InspectionType",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 1
+      },
+      {
+        "ColumnName": "ViolationDescription",
+        "ColumnPurpose": "Feature",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 1
+      },
+      {
+        "ColumnName": "RiskCategory",
+        "ColumnPurpose": "Label",
+        "ColumnDataFormat": "String",
+        "IsCategorical": false,
+        "Type": "Column",
+        "Version": 1
+      }
+    ],
+    "ConnectionString": "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=E:\\Workspace\\ML.NET\\RestaurantViolations\\RestaurantScores.mdf;Integrated Security=True;Connect Timeout=30",
+    "CommandString": "SELECT InspectionType, ViolationDescription, RiskCategory FROM [dbo].[Violations]",
+    "DatabaseName": "E:\\WORKSPACE\\ML.NET\\RESTAURANTVIOLATIONS\\RESTAURANTSCORES.MDF",
+    "SelectedTableDbo": "dbo",
+    "TableName": "Violations"
+  },
+  "Environment": {
+    "Type": "LocalCPU",
+    "Version": 1
+  },
+  "RunHistory": {
+    "Version": 0,
+    "Type": "Result",
+    "Trials": [
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "SdcaMaximumEntropyMulti",
+        "Score": 0.14023494860499267,
+        "RuntimeInSeconds": 0.62999999523162842
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "SdcaMaximumEntropyMulti",
+        "Score": 0.60572687224669608,
+        "RuntimeInSeconds": 0.54600000381469727
+      },
+      {
+        "Version": 0,
+        "Type": "Trial",
+        "TrainerName": "SdcaMaximumEntropyMulti",
+        "Score": 0.14023494860499267,
+        "RuntimeInSeconds": 0.67100000381469727
+      }
+    ],
+    "Pipeline": "[{\"EstimatorType\":\"FeaturizeText\",\"Inputs\":[\"InspectionType\"],\"Outputs\":[\"InspectionType\"]},{\"EstimatorType\":\"FeaturizeText\",\"Inputs\":[\"ViolationDescription\"],\"Outputs\":[\"ViolationDescription\"]},{\"EstimatorType\":\"Concatenate\",\"Inputs\":[\"InspectionType\",\"ViolationDescription\"],\"Outputs\":[\"Features\"]},{\"EstimatorType\":\"MapValueToKey\",\"Inputs\":[\"RiskCategory\"],\"Outputs\":[\"RiskCategory\"]},{\"EstimatorType\":\"NormalizeMinMax\",\"Inputs\":[\"Features\"],\"Outputs\":[\"Features\"]},{\"LabelColumnName\":\"RiskCategory\",\"FeatureColumnName\":\"Features\",\"L1Regularization\":\"22.3736060277166\",\"L2Regularization\":\"0.03125\",\"EstimatorType\":\"SdcaMaximumEntropyMulti\",\"Inputs\":[\"RiskCategory\"],\"Outputs\":[\"Features\"]},{\"EstimatorType\":\"MapKeyToValue\",\"Inputs\":[\"PredictedLabel\"],\"Outputs\":[\"PredictedLabel\"]}]",
+    "MetricName": "MicroAccuracy"
+  },
+  "Type": "TrainingConfig",
+  "Version": 1
+}

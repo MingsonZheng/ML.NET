@@ -4,12 +4,13 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.ML;
 using Microsoft.OpenApi.Models;
 using System.Threading.Tasks;
+using RestaurantViolationsPrediction_API;
 
 // Configure app
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddPredictionEnginePool<TaxiFarePrediction.ModelInput, TaxiFarePrediction.ModelOutput>()
-    .FromFile("TaxiFarePrediction.zip");
+builder.Services.AddPredictionEnginePool<RestaurantViolationsPrediction.ModelInput, RestaurantViolationsPrediction.ModelOutput>()
+    .FromFile("RestaurantViolationsPrediction.zip");
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddSwaggerGen(c =>
@@ -27,7 +28,7 @@ app.UseSwaggerUI(c =>
 
 // Define prediction route & handler
 app.MapPost("/predict",
-    async (PredictionEnginePool<TaxiFarePrediction.ModelInput, TaxiFarePrediction.ModelOutput> predictionEnginePool, TaxiFarePrediction.ModelInput input) =>
+    async (PredictionEnginePool<RestaurantViolationsPrediction.ModelInput, RestaurantViolationsPrediction.ModelOutput> predictionEnginePool, RestaurantViolationsPrediction.ModelInput input) =>
         await Task.FromResult(predictionEnginePool.Predict(input)));
 
 // Run app
@@ -36,11 +37,8 @@ app.Run();
 /*
 打开 PowerShell，并输入以下代码（其中，PORT 是应用程序正在侦听的端口）。
 $body = @{
-    Vendor_id="CMT"
-    Rate_code=1.0
-    Passenger_count=1.0
-    Trip_distance=3.8
-    Payment_type="CRD"
+    InspectionType="Reinspection/Followup"
+    ViolationDescription="Inadequately cleaned or sanitized food contact surfaces"
 }
 
 Invoke-RestMethod "https://localhost:<PORT>/predict" -Method Post -Body ($body | ConvertTo-Json) -ContentType "application/json"
@@ -48,7 +46,7 @@ Invoke-RestMethod "https://localhost:<PORT>/predict" -Method Post -Body ($body |
 
 /*
 如果成功，输出文本应如下所示：
-score
------
-15.020833
+prediction    score
+----------    -----
+Moderate Risk {0.055566575, 0.058012854, 0.88642055}
  */
